@@ -4,6 +4,7 @@
 # server
 server/node_modules
 server/.env
+*.sqlite
 
 
 # web
