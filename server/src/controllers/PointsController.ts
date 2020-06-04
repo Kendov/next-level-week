@@ -28,7 +28,6 @@ class PointsController {
         }
     
         const insertedIds = await transaction("points").insert(point);
-        console.log(insertedIds);
     
         const point_id = insertedIds[0];
     
@@ -39,7 +38,7 @@ class PointsController {
             }
         })
         const test = await transaction("point_items").insert(pointItems);
-        console.log(test);
+        transaction.commit();
     
         return res.json({
             id: point_id,
