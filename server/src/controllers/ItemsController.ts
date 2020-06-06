@@ -1,10 +1,6 @@
 import {Request, Response} from "express";
 import knex from "../database/connection";
-import dotenv from "dotenv";
-
-
-
-dotenv.config();
+import sysVar from "../utils/environment"
 
 class ItemsController{
     
@@ -16,7 +12,7 @@ class ItemsController{
             return {
                 id: item.id,
                 title: item.title,
-                image_url: `http://${uri}/uploads/${item.image}`
+                image_url: `http://${sysVar.SERVER_URL}/uploads/${item.image}`
             }
         });
         
