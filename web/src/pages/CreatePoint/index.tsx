@@ -96,24 +96,28 @@ const CreatePoint = () => {
         setFormData({...formData, [name]: value})
     }
     function handleSelectItem(id: number){
-        // let items: number[] = selectedItems;
-        // if(items.includes(id))
-        //     items.splice(items.indexOf(id), 1);
-        // else
-        //     items.push(id);
+        let items = selectedItems;
         
-        // setSelectedItems(items);
-        const alreadySelected = selectedItems.findIndex(item => item === id);
-        
-        if(alreadySelected >= 0)
-        {
-            const filteredItems = selectedItems.filter(item => item !== id);
-            setSelectedItems(filteredItems);
-        }
+        if(items.includes(id))
+            items.splice(items.indexOf(id), 1);
         else
-        {
-            setSelectedItems([...selectedItems, id]);
-        }
+            items.push(id);
+
+        setSelectedItems([...items]);
+        
+        
+    
+        // const alreadySelected = selectedItems.findIndex(item => item === id);
+        
+        // if(alreadySelected >= 0)
+        // {
+        //     const filteredItems = selectedItems.filter(item => item !== id);
+        //     setSelectedItems(filteredItems);
+        // }
+        // else
+        // {
+        //     setSelectedItems([...selectedItems, id]);
+        // }
 
 
     }
